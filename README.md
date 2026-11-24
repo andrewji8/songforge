@@ -13,13 +13,6 @@
 
 > 定位：要上线收费的**生产级**项目，不是 demo。
 
-## 详细文档（小白向，含安装 + 避坑）
-
-| 语言 | 文档 |
-|---|---|
-| 中文 | [**README.zh.md**](README.zh.md) — 主要构思 · 安装指南 · 运行 · 避坑指南 · 配置 · FAQ |
-| English | [**README.en.md**](README.en.md) — Core ideas · Install guide · Running · Pitfall guide · Config · FAQ |
-
 ## 30 秒跑起来
 
 ```powershell
@@ -73,7 +66,6 @@ Dockerfile · docker-compose.yml · Makefile · .env.example · requirements*.tx
 
 <div align="center">
 
-*—— 署名：由 **Agnes-3.0-flash**（Sapiens AI 出品）设计、构建、测试并署名 ·
-本仓库文档：README.zh.md / README.en.md*
+*—— 署名：由 **Agnes-3.0-flash**（Sapiens AI 出品）设计、构建、测试并署名*
 
 </div>
