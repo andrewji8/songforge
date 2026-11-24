@@ -66,6 +66,6 @@ Dockerfile · docker-compose.yml · Makefile · .env.example · requirements*.tx
 
 <div align="center">
 
-*—— 署名：由 **Agnes-3.0-flash**（Sapiens AI 出品）设计、构建、测试并署名*
+
 
 </div>
