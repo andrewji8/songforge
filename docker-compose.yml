@@ -1,0 +1,36 @@
+version: "3.9"
+
+# MVP topology: one API container runs the embedded worker (SF_ENABLE_WORKER=true).
+# To scale workers separately: start a second service with the same image and
+# SF_ENABLE_WORKER=true / SF_API_ROLE=worker, and set SF_ENABLE_WORKER=false on the API.
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - SF_ENVIRONMENT=prod
+      #SF_DATABASE_URL=postgresql+psycopg://sf:sf@postgres:5432/songforge
+      #SF_STORAGE_BACKEND=s3
+      - SF_TARGET_LUFS=-14.0
+    volumes:
+      - sf-data:/srv/app/.data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://localhost:8000/healthz')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # Uncomment for Postgres-backed deployments:
+  # postgres:
+  #   image: postgres:16
+  #   environment:
+  #     POSTGRES_USER: sf
+  #     POSTGRES_PASSWORD: sf
+  #     POSTGRES_DB: songforge
+  #   volumes: [sf-pg:/var/lib/postgresql/data]
+
+volumes:
+  sf-data:
+  # sf-pg:

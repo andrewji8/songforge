@@ -1,0 +1,10 @@
+[project]
+name = "songforge"
+version = "0.1.0"
+description = "SongForge — AI song generator: one idea / voice clip / loop in, a release-ready song out."
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["backend/tests"]
+pythonpath = ["backend"]
+addopts = "-q"

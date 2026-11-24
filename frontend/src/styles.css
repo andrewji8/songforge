@@ -1,0 +1,278 @@
+/* SongForge — 深色音乐向视觉语言 */
+:root {
+  --bg: #0b0d12;
+  --panel: #141721;
+  --panel-2: #1b1f2c;
+  --line: #262b3a;
+  --text: #e8eaf2;
+  --muted: #9aa3b8;
+  --accent: #7c5cff;
+  --accent-2: #35d0ba;
+  --danger: #ff5c7a;
+  --ok: #4cd7a5;
+  --radius: 14px;
+  font-size: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: radial-gradient(1200px 800px at 70% -10%, #1a1430 0%, var(--bg) 55%);
+  color: var(--text);
+  font-family: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+/* topbar */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 0 10px;
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  background: none;
+  border: 0;
+  color: var(--text);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: .3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand-mark {
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+.tagline {
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+h1 { font-size: 1.9rem; margin: 26px 0 6px; }
+h2 { font-size: 1.5rem; margin: 8px 0 4px; }
+h3 { font-size: 1.05rem; margin: 0 0 10px; }
+.sub { color: var(--muted); margin: 0 0 18px; }
+code {
+  background: var(--panel-2);
+  padding: 1px 6px;
+  border-radius: 6px;
+  font-size: .85em;
+}
+
+.footer {
+  margin-top: 48px;
+  color: var(--muted);
+  font-size: .78rem;
+  text-align: center;
+}
+
+/* tabs */
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 18px 0 6px;
+}
+.tab {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 12px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: .9rem;
+  text-align: left;
+}
+.tab.active {
+  color: var(--text);
+  border-color: var(--accent);
+  background: linear-gradient(180deg, #1b1730, var(--panel));
+  box-shadow: 0 0 0 1px var(--accent) inset;
+}
+
+/* panels */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin: 14px 0;
+}
+.field-label {
+  display: block;
+  color: var(--muted);
+  font-size: .82rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.desc, textarea, input[type="number"], select, input[type="file"] {
+  width: 100%;
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  font: inherit;
+}
+.desc:focus, textarea:focus, input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.hint { color: var(--muted); font-size: .8rem; margin-top: 8px; }
+
+.rec-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.rec-file { color: var(--accent-2); font-size: .85rem; }
+
+/* advanced */
+.advanced {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin: 14px 0;
+}
+.advanced summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: .85rem;
+}
+.adv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 14px;
+}
+.adv-styles, .adv-lyrics { grid-column: 1 / -1; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: .85rem;
+}
+.chip.on { color: var(--text); border-color: var(--accent); background: #241d3d; }
+
+/* buttons */
+.btn {
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+.btn small { color: var(--muted); font-size: .75rem; }
+.btn.primary {
+  background: linear-gradient(180deg, var(--accent), #5b3fd6);
+  border: 0;
+  color: white;
+  font-weight: 700;
+}
+.btn.primary:disabled { opacity: .6; cursor: not-allowed; }
+.btn.big { width: 100%; justify-content: center; margin-top: 18px; padding: 15px; font-size: 1.05rem; }
+.btn.danger { background: var(--danger); border: 0; color: #fff; }
+.btn.ghost { background: transparent; border-color: var(--line); }
+.btn.dl {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 12px 14px;
+  margin-bottom: 8px;
+}
+.btn.dl:hover { border-color: var(--accent); }
+
+.error {
+  color: var(--danger);
+  background: #2a1620;
+  border: 1px solid #4a1f2e;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 12px 0;
+}
+
+/* results */
+.results-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 8px;
+}
+.progress {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--panel-2);
+  overflow: hidden;
+  margin: 18px 0 8px;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: width .5s ease;
+}
+.hook-box, .final-box, .downloads, .lyrics, .error-box {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin: 14px 0;
+}
+.hook-box { border-color: var(--accent-2); }
+.meta { display: flex; gap: 16px; color: var(--muted); font-size: .85rem; margin: 10px 0; }
+.dl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.lyric-sec { margin-bottom: 14px; }
+.lyric-tag { color: var(--accent); font-size: .75rem; letter-spacing: .1em; margin-bottom: 4px; }
+.lyric-line { color: var(--text); }
+
+.error-box { border-color: var(--danger); }
+.error-box p { color: var(--muted); word-break: break-word; }
+
+.logbox {
+  margin-top: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+}
+.logbox summary { color: var(--muted); font-size: .8rem; cursor: pointer; }
+.logbox ul {
+  list-style: none;
+  padding: 10px 0 0;
+  margin: 0;
+  color: var(--muted);
+  font-size: .8rem;
+  font-family: ui-monospace, monospace;
+}
+.logbox li { padding: 2px 0; }
+.log-type { color: var(--accent-2); }
+.log-err { color: var(--danger); }
+
+@media (max-width: 560px) {
+  .tabs { grid-template-columns: 1fr; }
+  .adv-grid, .dl-grid { grid-template-columns: 1fr; }
+}
