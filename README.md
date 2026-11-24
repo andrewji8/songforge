@@ -1,5 +1,11 @@
 # SongForge — 一句话，还你一首能直接发布的歌
 
+<div align="center">
+
+[English](./README.en.md#top) · [简体中文](./README.zh.md#top)
+
+</div>
+
 **AI 歌曲生成器**：给一个念头（一句话 / 一段你自己的声音 / 一段节拍 loop），
 几分钟内拿到**已混音、已母带、无爆音、响度达标（-14 LUFS / -1 dBTP）**的成品歌曲：
 `master.wav` + `master.mp3` + 5 组分轨（drums / bass / chords / melody / vox）+ 带段落标注的歌词。

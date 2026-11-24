@@ -1,5 +1,11 @@
 # SongForge — One Thought, Back a Radio-Ready Song
 
+<div align="center">
+
+[English](./README.en.md#top) · [简体中文](./README.zh.md#top)
+
+</div>
+
 > Give it a thought (a sentence / your own voice / a beat loop) and in a few minutes
 > get a **mixed, mastered, clipping-free, loudness-compliant** finished song:
 > `master.wav` + `master.mp3` + 5 stems (drums / bass / chords / melody / vox)
